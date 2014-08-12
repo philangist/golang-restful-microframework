@@ -23,7 +23,7 @@ type Resource interface {
 
 type (
   GetNotSupported struct {}
-  PostNotSupposted struct {}
+  PostNotSupported struct {}
   PutNotSupported struct {}
   DeleteNotSupported struct {}
 )
@@ -38,6 +38,10 @@ func (PostNotSupported) Post(values url.Values) (int, interface{}) {
 }
 
 func (PutNotSupported) Put(values url.Values) (int, interface{}) {
+  return 405, ""
+}
+
+func (DeleteNotSupported) Deleted(values url.Values) (int, interface{}) {
   return 405, ""
 }
 
@@ -85,5 +89,5 @@ func (api *API) AddResource(resource Resource, path string) {
 
 func (api *API) Start(port int){
   portString := fmt.Sprintf(":%d", port)
-  http.ListenAndServe(port, nil)
+  http.ListenAndServe(portString, nil)
 }
