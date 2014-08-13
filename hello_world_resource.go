@@ -2,7 +2,7 @@ package main
 
 import (
   "net/url"
-  "sleepy"
+  "philangist.github.com/restful-micro-framework/sleepy"
   )
 
 type HelloResource struct {

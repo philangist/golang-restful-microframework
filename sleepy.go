@@ -62,13 +62,13 @@ func (api *API) requestHandler(resource Resource) http.HandlerFunc {
 
     switch method {
     case GET:
-      code, data := resource.Get(values)
+      code, data = resource.Get(values)
     case POST:
-      code, data := resource.Post(values)
+      code, data = resource.Post(values)
     case PUT:
-      code, data := resource.Put(values)
+      code, data = resource.Put(values)
     case DELETE:
-      code, data := resource.Delete(values)
+      code, data = resource.Delete(values)
     default:
       api.Abort(rw, 405)
       return
