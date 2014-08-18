@@ -2,7 +2,7 @@ package main
 
 import (
   "net/url"
-  "restful-micro-framework/sleepy"
+  "philangist.github.com/restful-micro-framework/sleepy"
   )
 
 type HelloResource struct {
@@ -20,6 +20,6 @@ func main(){
   helloResource := new(HelloResource)
 
   var api = new(sleepy.API)
-  api.addResource(helloResource, "/hello")
+  api.AddResource(helloResource, "/hello")
   api.Start(3000)
 }
