@@ -41,7 +41,7 @@ func (PutNotSupported) Put(values url.Values) (int, interface{}) {
   return 405, ""
 }
 
-func (DeleteNotSupported) Deleted(values url.Values) (int, interface{}) {
+func (DeleteNotSupported) Delete(values url.Values) (int, interface{}) {
   return 405, ""
 }
 
